@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/css/video/editar.css">
+<div id="contenedor">
+
+    {{#each lista}}
+    <form action="/goles/editar/{{id_goles}}" method="post">
+        <div id="titulo">
+            <h2>Editar goles
+            </h2>
+        </div>
+        <div id="goles">
+            <label>Edita los goles:</label>
+            <input type="text" name="goles" value="{{goles}}" required placeholder="Ingrese los goles.">
+        </div>
+
+        <div id="fecha_puclicacion">
+            <label>Fecha goles:</label>
+            <input id="fechas" type="text"  readonly name="fecha_puclicacion" value="{{fecha_puclicacion}}" required placeholder="Ingrese la fecha.">
+        </div>
+        <div id="boton">
+            <button type="submit">Actualizar</button>
+        </div>
+    </form>
+    {{/each}}
+</div>
+
+<script src="/js/fecha.js"></script>

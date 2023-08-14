@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/css/clasificacion/agregar.css">
+<div id="container">
+    <form action="/actividad/agregar/{{user.id_usuario}}" method="post">
+        <div id="titulo">
+            <h3>Clasificacion</h3>
+        </div>
+        <div id="nombreClasificacion">
+            <label>Nombre Clasificacion:</label>
+
+            <input type="text" name="nombreClasificacion" required placeholder="Ingrese nombre de la clasificacion">
+        </div>
+
+        <div id="descripcion">
+            <label>Agrega la descripcion de la Clasificacion:</label>
+            <input type="text" name="descripcion" required placeholder="Ingrese la clasificacion">
+        </div>
+
+        <div id="urlClasificacion">
+            <label>Agregar Imagen de la Clasificacion:</label>
+            <input type="text" name="urlClasificacion" required placeholder="Ingrese la url de la clasificacion.">
+        </div>
+
+        <div id="boton">
+            <button type="submit" id="">Guardar</button>
+        </div>
+    </form>
