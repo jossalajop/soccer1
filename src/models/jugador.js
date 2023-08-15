@@ -1,21 +1,19 @@
-const usuario=(sequelize,type)=>{
-    return sequelize.define('usuarios',{
-        idUsuario:{
+const jugador=(sequelize,type)=>{
+    return sequelize.define('jugadores',{
+        idJugador:{
             type:  type.INTEGER,
             primaryKey:true,
             autoIncrement:true
         },
-        username:type.STRING(99),
-        apellido:type.STRING,   
-        email:type.STRING,     
-        contraseña: type.STRING,
-        
-        crearUsuario: {
+        nombreJugador:type.STRING,
+        apellidoJugador:type.STRING,
+        descripcionJugador:type.STRING(5000),        
+        crearJugador: {
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull: false
         },
-        actualizarUsuario: {
+        actualizarJugador: {
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull: false
@@ -25,4 +23,4 @@ const usuario=(sequelize,type)=>{
     })
 }
 
-module.exports = usuario;
+module.exports = jugador;

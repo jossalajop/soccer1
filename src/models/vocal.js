@@ -1,21 +1,19 @@
-const usuario=(sequelize,type)=>{
-    return sequelize.define('usuarios',{
-        idUsuario:{
+const vocal=(sequelize,type)=>{
+    return sequelize.define('vocales',{
+        idvocal:{
             type:  type.INTEGER,
             primaryKey:true,
             autoIncrement:true
         },
-        username:type.STRING(99),
-        apellido:type.STRING,   
-        email:type.STRING,     
-        contraseña: type.STRING,
+        nombreVocal:type.STRING,
+        apellidoVocal: type.STRING,
         
-        crearUsuario: {
+        creacionVocal: {
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull: false
         },
-        actualizarUsuario: {
+        actualizarVocal: {
             type: 'TIMESTAMP',
             defaultValue: type.literal('CURRENT_TIMESTAMP'),
             allowNull: false
@@ -25,4 +23,4 @@ const usuario=(sequelize,type)=>{
     })
 }
 
-module.exports = usuario;
+module.exports = vocal;

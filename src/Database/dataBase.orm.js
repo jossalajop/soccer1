@@ -23,11 +23,15 @@ sequelize.sync({ force: false })
 		console.log("tablas sincronizadas");
 	});
 
-	const usuariosModelo =require('../models/usuario')
+	const usuarioModelo =require('../models/usuario')
+	const jugadorModelo =require('../models/jugador')
+	const vocalModelo =require('../models/vocal')
     const paginaModelo = require("../models/paginaPrincipal");
 
 //sincronia
-const usuario =usuariosModelo(sequelize,Sequelize)
+const usuario =usuarioModelo(sequelize,Sequelize)
+const jugador =jugadorModelo(sequelize,Sequelize)
+const vocal =vocalModelo(sequelize,Sequelize)
 const paginaPrincipal =paginaModelo(sequelize,Sequelize)
 
 usuario.hasMany(paginaPrincipal)
@@ -35,5 +39,8 @@ paginaPrincipal.belongsTo(usuario)
 
 module.exports = {
 	usuario,
-	paginaPrincipal
+	jugador,
+	vocal,
+	paginaPrincipal,
+
 };
